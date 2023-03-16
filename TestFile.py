@@ -1,2 +1,7 @@
-for i in range(1,10):
-    print("Test Number: " + str(i)) 
+def fib(num):
+    if(num <= 1):
+        return num
+    else:
+        return fib(num-1) + fib(num-2)
+
+print(fib(11))
