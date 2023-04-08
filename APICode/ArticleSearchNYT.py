@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = API_KEY = open("APICode/api_key.txt", "r").read()
+API_KEY = open("APICode/api_key.txt", "r").read()
 
 link_article_search = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
 q_article_search = str(input("Please enter keyword you would like to look up: "))
