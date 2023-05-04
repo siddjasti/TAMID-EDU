@@ -16,7 +16,7 @@ def fetch_data(indicators, country_codes, start_date, end_date):
 
 #Variables
 indicators = ["NY.GDP.MKTP.KD", "SP.POP.TOTL", "SL.UEM.TOTL.ZS"] #GDP, Population, Unemployment
-country_codes = ["AR", "BD", "BE", "CA", "CL", "CO", "DK", "EG", "FI", "GR", "HK", "ID", "IR", "IE", "IL", "IT", "KE", "KR", "MY", "MX", "NL", "NZ", "NG", "NO", "PK", "PE", "PH", "PL", "PT", "RU", "SA", "SG", "ZA", "ES", "SE", "CH", "TW", "TH", "TR", "AE", "UA", "VN"]
+country_codes = ['US', 'GB', 'FR', 'DE', 'JP', 'CN', 'IN', 'BR', 'ZA', 'AU']
 start_date = '2000'
 end_date = '2021'
 
