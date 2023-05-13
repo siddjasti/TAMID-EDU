@@ -2,7 +2,7 @@ import requests, sys, os
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 
-# Function to search articles
+#function to search articles
 def search_articles(type):
     keyword = simpledialog.askstring("Enter Keyword", "Please enter a keyword:" if type == "search" else " Please enter a keyword\n\n Options are: arts, automobiles, books, business, fashion, food, health, home, insider,\n magazine, movies, nyregion, obituaries, opinion, politics, realestate, science, sports,\n sundayreview, technology, theater, t-magazine, travel, upshot, us, and world") 
     if keyword:
@@ -14,7 +14,7 @@ def search_articles(type):
     else:
         messagebox.showerror("Error", "You must enter a keyword to search for articles.")
 
-# Command to look up top 10 articls on keyword
+#command to look up top 10 articls on keyword
 def get_searched_articles(keyword):
     API_KEY = open("APICode/api_key.txt", "r").read()
     link_article_search = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
@@ -24,7 +24,7 @@ def get_searched_articles(keyword):
     headlines = [article["headline"]["main"] for article in response["response"]["docs"]]
     return headlines
 
-# Command to look up top articles under a specfic section
+#command to look up top articles under a specfic section
 def top_stories(keyword):
     API_KEY = open("APICode/api_key.txt", "r").read()
     #(Options are: arts, automobiles, books, business, fashion, food, health, home, insider, magazine, movies, nyregion, obituaries, opinion, politics, realestate, science, sports, sundayreview, technology, theater, t-magazine, travel, upshot, us, and world): "
@@ -46,7 +46,7 @@ def display_results(articles, type):
     results_window.configure(bg="black")
     results_window.title("Search Results")
 
-    # Display the heading
+    #display the heading
     title = "Top 10 Articles for The Keyword You Entered:" if type == "search" else "Top Articles for the Topic You Entered:"
     heading = title
     tk.Label(
@@ -57,7 +57,7 @@ def display_results(articles, type):
         bg="black",
     ).grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
-    # Display the articles
+    #display the articles
     for i, article in enumerate(articles, start=1):
         tk.Label(
             results_window,
@@ -69,13 +69,13 @@ def display_results(articles, type):
             justify="left",
         ).grid(row=i, column=0, padx=10, pady=5, sticky="w")
 
-# Main application window
+#main application window
 root = tk.Tk()
 root.title("Article Finder")
 root.configure(bg="black")
 root.geometry("500x200") # Width x Height
 
-# Button for search
+#button for search
 search_button = tk.Button(
     root,
     text="Search Articles",
@@ -88,7 +88,7 @@ search_button = tk.Button(
 )
 search_button.pack(pady=18)
 
-# Button for search
+#button for top
 top_button = tk.Button(
     root,
     text="Top Stories",

@@ -124,7 +124,7 @@ root.title("Unemployment Predictor")
 frame = ttk.Frame(root, padding="10")
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-label_country_code = ttk.Label(frame, text="Enter country code:")
+label_country_code = ttk.Label(frame, text="Enter country name:")
 label_country_code.grid(column=0, row=0, sticky=tk.W)
 
 entry_country_code = ttk.Entry(frame, width=10)
@@ -132,9 +132,6 @@ entry_country_code.grid(column=1, row=0)
 
 button_submit = ttk.Button(frame, text="Predict Unemployment", command=on_submit)
 button_submit.grid(column=2, row=0, padx=(10, 0))
-
-label_possible_codes = ttk.Label(frame, text=f"R-Squared of Regresssion: {r2}")
-label_possible_codes.grid(column=0, row=1, columnspan=3, pady=(5, 0), sticky=tk.W)
 
 label_result = ttk.Label(frame, text="")
 label_result.grid(column=0, row=2, columnspan=3, pady=(10, 0), sticky=tk.W)
